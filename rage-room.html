@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Rage Room | Cassandra Crossno</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .rage-room-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      justify-content: center;
+      margin: 2em 0 3em 0;
+    }
+    .rage-btn {
+      background: #981518;
+      color: #fff;
+      font-family: 'Subway-Novella', Impact, 'Arial Black';
+      font-size: 1.4em;
+      border-radius: 7px;
+      border: 2px solid #a8a9ad;
+      box-shadow: 0 2px 16px 2px #98151844;
+      padding: 1.1em 2.4em;
+      margin: 1em 0;
+      cursor: pointer;
+      transition: background 0.13s, color 0.13s;
+    }
+    .rage-btn:hover {
+      background: #4e4b51;
+      color: #981518;
+      border-color: #981518;
+    }
+    .rage-output {
+      text-align: center;
+      font-family: 'Subway-Novella', Impact, 'Arial Black', sans-serif;
+      color: #f5f5f5;
+      font-size: 2em;
+      margin: 1.5em 0;
+      text-shadow: 0 0 12px #981518, 0 2px 20px #0b0f0f;
+      min-height: 2em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="brand-name">Cassandra Crossno</span>
+      <span class="subtitle">The Crucible</span>
+    </div>
+    <nav>
+      <!-- ...nav... -->
+    </nav>
+  </header>
+  <main>
+    <section class="rage-room-hero">
+      <h1>The Rage Room</h1>
+      <p>
+        Welcome to the digital smash zone. Throw a plate, punch a pillow, or just scream into the void. No judgment—just catharsis.
+      </p>
+    </section>
+    <section class="rage-room-actions">
+      <button class="rage-btn" onclick="rageRoom('plate')">Smash a Plate</button>
+      <button class="rage-btn" onclick="rageRoom('yell')">Scream Into the Void</button>
+      <button class="rage-btn" onclick="rageRoom('punch')">Punch a Pillow</button>
+      <button class="rage-btn" onclick="rageRoom('explosion')">Nuke My Feels</button>
+    </section>
+    <div class="rage-output" id="rageOutput"></div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <nav>
+        <ul>
+          <li><a href="policies.html">legal-ish shit</a></li>
+          <li><a href="contact.html">holler at me</a></li>
+        </ul>
+      </nav>
+      <div class="copyright">
+        &copy; 2025 Cassandra Crossno. All rage reserved.
+      </div>
+    </div>
+  </footer>
+  <script>
+    function rageRoom(action) {
+      const outputs = {
+        plate: [
+          "💥 SMASH! 💥 That plate never stood a chance.",
+          "You shattered it, and guess what? The world didn’t end. Take that, karma.",
+          "That was Grandma’s heirloom? Oops. Not sorry."
+        ],
+        yell: [
+          "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHH!",
+          "That scream echoed all the way to corporate HR.",
+          "The void thanks you for your contribution. Still empty, though."
+        ],
+        punch: [
+          "WHAM! That pillow just saw God.",
+          "You hit harder than most people feel.",
+          "Pillow: 0, You: 1, Platitudes: -5."
+        ],
+        explosion: [
+          "💣💥 BOOM 💥💣 Welcome to emotional ground zero.",
+          "You just nuked your feelings. Fallout: 10,000 rads of honesty.",
+          "Therapists everywhere felt a disturbance in the force."
+        ]
+      };
+      const arr = outputs[action] || ["Congrats, you broke the button AND my faith in humanity."];
+      document.getElementById('rageOutput').textContent = arr[Math.floor(Math.random() * arr.length)];
+    }
+  </script>
+</body>
+</html>

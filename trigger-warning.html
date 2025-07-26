@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trigger Warning Generator | Cassandra Crossno</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .twg-box {
+      background: #2f2c31;
+      color: #f5f5f5;
+      border: 2px solid #981518;
+      border-radius: 12px;
+      padding: 2em;
+      max-width: 600px;
+      margin: 3em auto;
+      text-align: center;
+      box-shadow: 0 0 20px 4px #98151855;
+    }
+    .twg-btn {
+      background: #981518;
+      color: #fff;
+      padding: 1em 2.5em;
+      border: 2px solid #a8a9ad;
+      border-radius: 8px;
+      font-size: 1.2em;
+      font-family: 'Subway-Novella', Impact, 'Arial Black', sans-serif;
+      cursor: pointer;
+      margin-top: 1em;
+      margin-bottom: 2em;
+      transition: background 0.17s, color 0.17s;
+    }
+    .twg-btn:hover {
+      background: #4e4b51;
+      color: #981518;
+    }
+    .twg-output {
+      font-size: 1.3em;
+      margin-top: 1.4em;
+      min-height: 2.6em;
+      color: #f5f5f5;
+      font-family: 'Elegant-Typewriter', Courier, monospace;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="brand-name">Cassandra Crossno</span>
+      <span class="subtitle">The Crucible</span>
+    </div>
+    <nav>
+      <!-- ...nav... -->
+    </nav>
+  </header>
+  <main>
+    <div class="twg-box">
+      <h1>Trigger Warning Generator</h1>
+      <p>
+        You want a warning? Here, have a warning. Click the button and let the paranoia commence.
+      </p>
+      <button class="twg-btn" onclick="generateTW()">Trigger Me, Captain</button>
+      <div class="twg-output" id="triggerWarningOutput"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <nav>
+        <ul>
+          <li><a href="policies.html">legal-ish shit</a></li>
+          <li><a href="contact.html">holler at me</a></li>
+        </ul>
+      </nav>
+      <div class="copyright">
+        &copy; 2025 Cassandra Crossno. All rage reserved.
+      </div>
+    </div>
+  </footer>
+  <script>
+    const twList = [
+      "Trigger Warning: Contains more truth than your therapist can handle.",
+      "Trigger Warning: May cause spontaneous eyerolling and existential dread.",
+      "Trigger Warning: Swearing, sarcasm, and brutal honesty ahead. Proceed if you dare.",
+      "Trigger Warning: Platitude beatdowns. No inspirational quotes will survive.",
+      "Trigger Warning: Grief, rage, and zero tolerance for bullshit.",
+      "Trigger Warning: Author is not responsible for shattered illusions.",
+      "Trigger Warning: Could make your grandma cry. Or cheer. Who knows.",
+      "Trigger Warning: Emotional demolition derby inside.",
+      "Trigger Warning: Not safe for motivational speakers or yoga moms.",
+      "Trigger Warning: If you’re allergic to feelings, leave now.",
+      "Trigger Warning: Contains pain, resilience, and the urge to punch a wall."
+    ];
+    function generateTW() {
+      document.getElementById("triggerWarningOutput").textContent = twList[Math.floor(Math.random() * twList.length)];
+    }
+  </script>
+</body>
+</html>

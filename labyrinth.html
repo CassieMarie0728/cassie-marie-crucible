@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lost Souls Labyrinth | Cassandra Crossno</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .maze-box {
+      background: #2f2c31;
+      color: #f5f5f5;
+      border: 2px solid #981518;
+      border-radius: 16px;
+      padding: 2em;
+      max-width: 600px;
+      margin: 3em auto;
+      text-align: center;
+      box-shadow: 0 0 24px 7px #98151844;
+    }
+    .maze-path {
+      margin: 2em 0 1em 0;
+    }
+    .maze-btn {
+      background: #981518;
+      color: #fff;
+      padding: 1em 2.5em;
+      border: 2px solid #a8a9ad;
+      border-radius: 8px;
+      font-size: 1.2em;
+      font-family: 'Subway-Novella', Impact, 'Arial Black', sans-serif;
+      cursor: pointer;
+      margin-top: 1.2em;
+      transition: background 0.15s, color 0.15s;
+    }
+    .maze-btn:hover {
+      background: #4e4b51;
+      color: #981518;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="brand-name">Cassandra Crossno</span>
+      <span class="subtitle">The Crucible</span>
+    </div>
+    <nav>
+      <!-- ...nav... -->
+    </nav>
+  </header>
+  <main>
+    <div class="maze-box">
+      <h1>Lost Souls Labyrinth</h1>
+      <p>
+        You wandered too far and now you’re lost in the digital underworld. Find your way out, or stay here and haunt my analytics.
+      </p>
+      <div class="maze-path" id="mazePath">
+        You’re at a crossroads.<br>
+        <button class="maze-btn" onclick="choosePath('left')">Go Left (toward the rage)</button>
+        <button class="maze-btn" onclick="choosePath('right')">Go Right (toward the sarcasm)</button>
+      </div>
+      <div id="mazeResult"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <nav>
+        <ul>
+          <li><a href="policies.html">legal-ish shit</a></li>
+          <li><a href="contact.html">holler at me</a></li>
+        </ul>
+      </nav>
+      <div class="copyright">
+        &copy; 2025 Cassandra Crossno. All rage reserved.
+      </div>
+    </div>
+  </footer>
+  <script>
+    function choosePath(direction) {
+      let out = document.getElementById('mazeResult');
+      let path = document.getElementById('mazePath');
+      if (direction === 'left') {
+        path.innerHTML = `<button class="maze-btn" onclick="choosePath('breakthrough')">Break Through the Wall (rage harder)</button>
+        <button class="maze-btn" onclick="choosePath('loop')">Keep Going Left (embrace the spiral)</button>`;
+        out.textContent = "You chose rage. The wall is looking mighty punchable.";
+      } else if (direction === 'right') {
+        path.innerHTML = `<button class="maze-btn" onclick="choosePath('snark')">Make a Sarcastic Comment</button>
+        <button class="maze-btn" onclick="choosePath('giveup')">Give Up (admit you're lost)</button>`;
+        out.textContent = "You chose sarcasm. The air smells vaguely of burnt bridges.";
+      } else if (direction === 'breakthrough') {
+        path.innerHTML = `<a class="maze-btn" href="index.html">Escape! (Back to the Crucible)</a>`;
+        out.textContent = "Congrats. You smashed your way out. That’s how it's done.";
+      } else if (direction === 'loop') {
+        path.innerHTML = `<a class="maze-btn" href="labyrinth.html">You’re back where you started. Try again.</a>`;
+        out.textContent = "You’re in an existential spiral. Welcome to grief.";
+      } else if (direction === 'snark') {
+        path.innerHTML = `<a class="maze-btn" href="forums.html">Roast Someone in the Forums</a>`;
+        out.textContent = "You snarked your way into the trauma tavern. Good luck in there.";
+      } else if (direction === 'giveup') {
+        path.innerHTML = `<a class="maze-btn" href="404.html">Go Deeper into the Void</a>`;
+        out.textContent = "You gave up. Welcome to the void. There are no refunds.";
+      }
+    }
+  </script>
+</body>
+</html>

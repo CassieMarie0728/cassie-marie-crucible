@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Merch Gallery | Real Survivors, Real Rage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2em;
+            max-width: 1000px;
+            margin: 2em auto;
+        }
+        .gallery-item img {
+            width: 100%;
+            border-radius: 10px;
+            border: 3px solid #981518;
+            box-shadow: 0 0 24px 6px #98151833;
+        }
+        .gallery-item {
+            text-align: center;
+            color: #a8a9ad;
+            font-family: 'Elegant-Typewriter', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="brand-name">Cassandra Crossno</span>
+            <span class="subtitle">The Grief Empire's Digital Thunderdome</span>
+        </div>
+        <nav><!-- ...nav... --></nav>
+    </header>
+    <main>
+        <section class="merch-gallery-hero">
+            <h1>Merch Gallery</h1>
+            <p>
+                Real survivors, real rage, real gear. Send your photo rocking the merch. Bonus points for attitude, middle fingers, and tattoos.
+            </p>
+        </section>
+        <section class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/reader1_merch.jpg" alt="Grief Brain Mug Selfie">
+                <div>“My mug says what I’m thinking.” — GrumpyGrace</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/reader2_tee.jpg" alt="Fuck Your Platitudes Tee">
+                <div>“Wore this to Thanksgiving. Grandma nearly fainted.” — SavageSam</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/reader3_patch.jpg" alt="Grief Warrior Patch on Jacket">
+                <div>“Survivor’s uniform.” — PatchyPaul</div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-inner">
+            <nav>
+                <ul>
+                    <li><a href="policies.html">legal-ish shit</a></li>
+                    <li><a href="contact.html">holler at me</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                &copy; 2025 Cassandra Crossno. All rage reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Platitude Punch-Out | Cassandra Crossno</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .punchout-box {
+      background: #2f2c31;
+      color: #f5f5f5;
+      border: 2px solid #981518;
+      border-radius: 20px;
+      padding: 2.5em 2em;
+      max-width: 700px;
+      margin: 3em auto;
+      text-align: center;
+      box-shadow: 0 0 28px 9px #98151844;
+    }
+    .platitude-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.3em;
+      margin-top: 2em;
+    }
+    .platitude-btn {
+      background: #4e4b51;
+      color: #fff;
+      padding: 1em 1.5em;
+      border: 2px solid #981518;
+      border-radius: 10px;
+      font-size: 1em;
+      font-family: 'Subway-Novella', Impact, 'Arial Black', sans-serif;
+      cursor: pointer;
+      transition: background 0.14s, color 0.14s;
+    }
+    .platitude-btn.punched {
+      background: #981518;
+      color: #fff;
+      text-decoration: line-through;
+    }
+    .punchout-result {
+      margin: 2em 0 0 0;
+      font-size: 1.3em;
+      color: #a8a9ad;
+      font-family: 'Elegant-Typewriter', Courier, monospace;
+      min-height: 2.4em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="brand-name">Cassandra Crossno</span>
+      <span class="subtitle">The Crucible</span>
+    </div>
+    <nav>
+      <!-- ...nav... -->
+    </nav>
+  </header>
+  <main>
+    <div class="punchout-box">
+      <h1>Platitude Punch-Out</h1>
+      <p>
+        Tired of “thoughts and prayers”? Go ahead—give these platitudes the beating they deserve. Click to punch. No gloves required.
+      </p>
+      <div class="platitude-list" id="platitudeList"></div>
+      <div class="punchout-result" id="punchoutResult"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <nav>
+        <ul>
+          <li><a href="policies.html">legal-ish shit</a></li>
+          <li><a href="contact.html">holler at me</a></li>
+        </ul>
+      </nav>
+      <div class="copyright">
+        &copy; 2025 Cassandra Crossno. All rage reserved.
+      </div>
+    </div>
+  </footer>
+  <script>
+    const platitudes = [
+      "Everything happens for a reason",
+      "At least they're in a better place",
+      "Time heals all wounds",
+      "You’re so strong",
+      "Let me know if you need anything",
+      "God never gives you more than you can handle",
+      "It gets easier",
+      "Stay positive",
+      "You have to move on"
+    ];
+    const punchLines = [
+      "KO! That platitude won’t get up again.",
+      "The sarcasm gods salute you.",
+      "That one’s going down in history.",
+      "You just did what everyone was thinking.",
+      "If only you could do this in real life…",
+      "Your therapist would be proud.",
+      "The universe just cheered."
+    ];
+    function renderPlatitudes() {
+      const list = document.getElementById('platitudeList');
+      list.innerHTML = '';
+      platitudes.forEach((p, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'platitude-btn';
+        btn.textContent = p;
+        btn.onclick = () => punchPlatitude(btn);
+        list.appendChild(btn);
+      });
+    }
+    function punchPlatitude(btn) {
+      if (!btn.classList.contains('punched')) {
+        btn.classList.add('punched');
+        document.getElementById('punchoutResult').textContent =
+        punchLines[Math.floor(Math.random() * punchLines.length)];
+        if ('speechSynthesis' in window) {
+          let utter = new SpeechSynthesisUtterance("POW! Platitude destroyed.");
+          utter.rate = 1.1;
+          utter.pitch = 0.8;
+          speechSynthesis.speak(utter);
+        }
+      }
+    }
+    renderPlatitudes();
+  </script>
+</body>
+</html>

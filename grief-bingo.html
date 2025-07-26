@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grief Bingo | Cassandra Crossno</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .bingo-board {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1em;
+      max-width: 500px;
+      margin: 2em auto;
+    }
+    .bingo-cell {
+      background: #2f2c31;
+      color: #a8a9ad;
+      border: 2px solid #981518;
+      border-radius: 8px;
+      padding: 1em;
+      font-family: 'Elegant-Typewriter', Courier, monospace;
+      font-size: 1.07em;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.16s, color 0.16s;
+    }
+    .bingo-cell.bingo-hit {
+      background: #981518;
+      color: #f5f5f5;
+      text-decoration: line-through;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll('.bingo-cell').forEach(cell => {
+        cell.addEventListener('click', () => cell.classList.toggle('bingo-hit'));
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="brand-name">Cassandra Crossno</span>
+      <span class="subtitle">The Crucible</span>
+    </div>
+    <nav>
+      <!-- ...nav... -->
+    </nav>
+  </header>
+  <main>
+    <section class="bingo-hero">
+      <h1>Grief Bingo</h1>
+      <p>
+        Mark every soul-crushing phrase you hear. Five in a row? You win the right to scream into the void.
+      </p>
+    </section>
+    <section class="bingo-board">
+      <div class="bingo-cell">
+        “Everything happens for a reason”
+      </div>
+      <div class="bingo-cell">
+        “They’re in a better place”
+      </div>
+      <div class="bingo-cell">
+        “Time heals all wounds”
+      </div>
+      <div class="bingo-cell">
+        “You’re so strong”
+      </div>
+      <div class="bingo-cell">
+        “Let me know if you need anything”
+      </div>
+      <div class="bingo-cell">
+        “God never gives you more than you can handle”
+      </div>
+      <div class="bingo-cell">
+        “At least they’re not suffering”
+      </div>
+      <div class="bingo-cell">
+        “You have to move on”
+      </div>
+      <div class="bingo-cell">
+        “It was their time”
+      </div>
+      <div class="bingo-cell">
+        “Be grateful for what you had”
+      </div>
+      <div class="bingo-cell">
+        “At least you’re young”
+      </div>
+      <div class="bingo-cell">
+        “It gets easier”
+      </div>
+      <div class="bingo-cell">
+        “They wouldn’t want you to be sad”
+      </div>
+      <div class="bingo-cell">
+        “You’ll find someone else”
+      </div>
+      <div class="bingo-cell">
+        “Heaven needed another angel”
+      </div>
+      <div class="bingo-cell">
+        “At least you have other kids”
+      </div>
+      <div class="bingo-cell">
+        “I know how you feel”
+      </div>
+      <div class="bingo-cell">
+        “God has a plan”
+      </div>
+      <div class="bingo-cell">
+        “Stay positive”
+      </div>
+      <div class="bingo-cell">
+        “Just give it time”
+      </div>
+      <div class="bingo-cell">
+        “They’re always with you”
+      </div>
+      <div class="bingo-cell">
+        “At least you’re not alone”
+      </div>
+      <div class="bingo-cell">
+        “It could be worse”
+      </div>
+      <div class="bingo-cell">
+        “Count your blessings”
+      </div>
+      <div class="bingo-cell">
+        FREE SPACE: Scream Here
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <nav>
+        <ul>
+          <li><a href="policies.html">legal-ish shit</a></li>
+          <li><a href="contact.html">holler at me</a></li>
+        </ul>
+      </nav>
+      <div class="copyright">
+        &copy; 2025 Cassandra Crossno. All rage reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

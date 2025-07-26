@@ -1,0 +1,481 @@
+/* 
+    Cassandra Crossno – The Grief Empire's Digital Thunderdome
+    Style Sheet: Where mercy goes to die.
+    Fonts: Subway-Novella (for screaming), Elegant-Typewriter (for raw grit)
+*/
+
+@font-face {
+    font-family: 'Subway-Novella';
+    src: url('../fonts/Subway-Novella.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Elegant-Typewriter';
+    src: url('../fonts/Elegant-Typewriter.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --blood-oath: #981518;
+    --dark-whispers: #0b0f0f;
+    --burnt-echo: #4e4b51;
+    --burnt-echo2: #2f2c31;
+    --burnt-echo3: #3a383d;
+    --grief-fog: #a8a9ad;
+    --ghost-skin: #f5f5f5;
+}
+
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Elegant-Typewriter', monospace, Courier, 'Courier New', sans-serif;
+    background: linear-gradient(130deg, var(--dark-whispers) 85%, var(--burnt-echo3) 100%);
+    color: var(--grief-fog);
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, var(--dark-whispers) 80%, var(--burnt-echo2) 100%);
+    border-bottom: 3px solid var(--blood-oath);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 2vw;
+    display: flex;
+    flex-direction: column;
+}
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.4em 0;
+}
+.brand-name {
+    font-family: 'Subway-Novella', Impact, 'Arial Black', sans-serif;
+    font-size: 2.8em;
+    color: var(--blood-oath);
+    letter-spacing: 1px;
+    text-shadow: 0 1px 8px var(--burnt-echo);
+    margin-bottom: -0.2em;
+}
+.subtitle {
+    font-family: 'Elegant-Typewriter', Courier, monospace;
+    font-size: 1.1em;
+    color: var(--grief-fog);
+    margin-left: 6px;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em 2em;
+    align-items: center;
+    margin: 0;
+    padding: 0.4em 0 0.6em 0;
+}
+nav ul li {
+    position: relative;
+}
+nav a {
+    font-family: 'Subway-Novella', Impact, 'Arial Black', sans-serif;
+    color: var(--grief-fog);
+    text-decoration: none;
+    text-transform: lowercase;
+    letter-spacing: 0.04em;
+    font-size: 1.1em;
+    padding: 0.3em 0.7em;
+    transition: color 0.15s, background 0.15s;
+    border-radius: 3px;
+    border-bottom: 2px solid transparent;
+}
+nav a.active,
+nav a:hover,
+nav ul li:hover > a {
+    color: var(--blood-oath);
+    background: rgba(152,21,24,0.09);
+    border-bottom: 2px solid var(--blood-oath);
+    text-shadow: 0 0 6px var(--blood-oath);
+}
+.dropdown:hover > .dropdown-content,
+.dropdown:focus-within > .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 110%;
+    background: var(--dark-whispers);
+    border: 1px solid var(--burnt-echo);
+    border-radius: 4px;
+    min-width: 260px;
+    z-index: 200;
+    padding: 0.4em 0;
+    box-shadow: 0 6px 20px 2px rgba(0,0,0,0.35);
+}
+.dropdown-content li {
+    width: 100%;
+}
+.dropdown-content a {
+    display: block;
+    width: 100%;
+    padding: 0.5em 1.2em;
+    color: var(--grief-fog);
+    background: none;
+    font-size: 1em;
+    border-radius: 0;
+    border: none;
+    text-shadow: none;
+}
+.dropdown-content a:hover {
+    color: var(--blood-oath);
+    background: var(--burnt-echo3);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 64vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+}
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: url('../images/burnt_metal_bg.jpg') center center/cover no-repeat,
+        linear-gradient(120deg, var(--dark-whispers) 80%, var(--burnt-echo2) 100%);
+    opacity: 0.89;
+    filter: grayscale(0.28) contrast(1.23) brightness(0.72);
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 3vw 2vw;
+    background: rgba(11, 15, 15, 0.73);
+    border: 2px solid var(--burnt-echo);
+    border-radius: 10px;
+    box-shadow: 0 0 32px 2px rgba(152, 21, 24, 0.16);
+}
+.hero h1 {
+    font-family: 'Subway-Novella', Impact, 'Arial Black', sans-serif;
+    color: var(--blood-oath);
+    font-size: 3.2em;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.3em;
+    text-shadow: 0 0 10px var(--burnt-echo), 0 2px 20px #111;
+}
+.tagline {
+    font-family: 'Elegant-Typewriter', Courier, monospace;
+    color: var(--ghost-skin);
+    font-size: 1.4em;
+    margin-bottom: 1.4em;
+    text-shadow: 0 0 6px var(--dark-whispers);
+}
+.cta-group {
+    display: flex;
+    gap: 2vw;
+    justify-content: center;
+    margin-top: 2vw;
+    flex-wrap: wrap;
+}
+.cta-btn, .buy-btn {
+    background: var(--blood-oath);
+    color: var(--ghost-skin);
+    font-family: 'Subway-Novella', Impact, 'Arial Black';
+    font-size: 1.1em;
+    padding: 0.6em 2.2em;
+    border: 2px solid var(--burnt-echo);
+    border-radius: 6px;
+    margin: 0.2em;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    text-shadow: 0 0 6px #000;
+    box-shadow: 0 2px 16px 2px #98151822;
+    cursor: pointer;
+    transition: background 0.13s, color 0.13s, border 0.13s, box-shadow 0.13s;
+}
+.cta-btn:hover, .buy-btn:hover {
+    background: #6a0d11;
+    color: var(--ghost-skin);
+    border-color: var(--blood-oath);
+    box-shadow: 0 0 12px 3px #98151888;
+}
+
+/* Intro Section */
+.intro {
+    background: linear-gradient(100deg, var(--burnt-echo) 70%, var(--dark-whispers) 100%);
+    border-top: 2px solid var(--blood-oath);
+    border-bottom: 2px solid var(--blood-oath);
+    padding: 3.5vw 0;
+}
+.intro-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 3vw;
+    align-items: flex-start;
+    padding: 0 2vw;
+}
+.author-img {
+    width: 260px;
+    min-width: 200px;
+    aspect-ratio: 3/4;
+    border-radius: 9px;
+    border: 3px solid var(--burnt-echo2);
+    box-shadow: 0 0 28px 6px #98151833;
+    object-fit: cover;
+    filter: grayscale(0.7) contrast(1.2);
+    margin-right: 3vw;
+}
+.intro-text {
+    flex: 1 1 0;
+    min-width: 260px;
+}
+.intro-text h2 {
+    font-family: 'Subway-Novella', Impact, 'Arial Black';
+    color: var(--blood-oath);
+    margin-bottom: 0.6em;
+    font-size: 2em;
+    text-shadow: 0 0 4px var(--burnt-echo);
+}
+.intro-text p {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+    color: var(--grief-fog);
+    line-height: 1.7;
+}
+.read-more-btn {
+    font-family: 'Subway-Novella';
+    background: var(--burnt-echo2);
+    color: var(--blood-oath);
+    border: 2px solid var(--blood-oath);
+    border-radius: 5px;
+    padding: 0.5em 1.2em;
+    text-decoration: none;
+    font-size: 1.05em;
+    letter-spacing: 0.05em;
+    transition: background 0.13s, color 0.13s;
+}
+.read-more-btn:hover {
+    background: var(--blood-oath);
+    color: var(--ghost-skin);
+}
+
+/* Books Highlight */
+.books-highlight {
+    padding: 3vw 0 2vw 0;
+    background: linear-gradient(105deg, var(--burnt-echo2) 75%, var(--dark-whispers) 100%);
+    border-bottom: 2px solid var(--blood-oath);
+}
+.books-highlight h2 {
+    text-align: center;
+    font-family: 'Subway-Novella';
+    color: var(--blood-oath);
+    margin-bottom: 1.2em;
+    text-shadow: 0 0 6px var(--burnt-echo);
+    font-size: 2.1em;
+}
+.book-list {
+    display: flex;
+    gap: 3vw;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+.book {
+    background: linear-gradient(130deg, var(--dark-whispers) 70%, var(--burnt-echo) 100%);
+    border: 2px solid var(--burnt-echo3);
+    border-radius: 10px;
+    box-shadow: 0 2px 24px 6px #0b0f0f66;
+    padding: 2vw 1.4vw 2vw 1.4vw;
+    max-width: 320px;
+    min-width: 220px;
+    margin: 1vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.book img {
+    width: 100%;
+    max-width: 180px;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    border-radius: 6px;
+    margin: 0 auto 1em auto;
+    border: 2px solid var(--blood-oath);
+    box-shadow: 0 4px 16px 2px #98151844;
+}
+.book h3 {
+    font-family: 'Subway-Novella';
+    color: var(--blood-oath);
+    font-size: 1.3em;
+    margin: 0.5em 0 0.3em 0;
+}
+.book .blurb {
+    font-size: 1em;
+    margin-bottom: 1.1em;
+    color: var(--grief-fog);
+}
+.buy-btn {
+    margin-top: auto;
+}
+
+/* Quotes Carousel */
+.quotes-carousel {
+    padding: 2.5vw 0;
+    background: linear-gradient(100deg, var(--burnt-echo3) 72%, var(--dark-whispers) 100%);
+}
+.quotes-carousel h2 {
+    text-align: center;
+    font-family: 'Subway-Novella';
+    color: var(--blood-oath);
+    font-size: 2em;
+    margin-bottom: 1.1em;
+    letter-spacing: 1px;
+}
+.carousel {
+    display: flex;
+    gap: 3vw;
+    overflow-x: auto;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0 2vw;
+}
+.carousel blockquote {
+    min-width: 320px;
+    max-width: 480px;
+    background: linear-gradient(120deg, #4e4b51cc 85%, #0b0f0fcc 100%);
+    border-left: 6px solid var(--blood-oath);
+    border-radius: 9px;
+    box-shadow: 0 2px 16px 1px #98151822;
+    font-family: 'Elegant-Typewriter';
+    font-size: 1.08em;
+    color: var(--ghost-skin);
+    margin: 0 1.5vw 0 0;
+    padding: 1.2em 1.5em 1.1em 1.1em;
+    position: relative;
+}
+.carousel blockquote span {
+    color: var(--blood-oath);
+    font-family: 'Subway-Novella';
+    font-size: 1em;
+    display: block;
+    margin-top: 0.7em;
+    letter-spacing: 0.03em;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-whispers);
+    border-top: 3px solid var(--blood-oath);
+    color: var(--grief-fog);
+    padding: 1.1em 0 0.5em 0;
+    font-size: 1em;
+    margin-top: 3vw;
+}
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer nav ul {
+    display: flex;
+    gap: 2em;
+    padding: 0;
+    margin: 0 0 0.7em 0;
+    list-style: none;
+}
+footer nav a {
+    color: var(--grief-fog);
+    font-family: 'Subway-Novella';
+    font-size: 1em;
+    text-decoration: none;
+    transition: color 0.13s;
+}
+footer nav a:hover {
+    color: var(--blood-oath);
+}
+.copyright {
+    color: var(--burnt-echo);
+    font-family: 'Elegant-Typewriter';
+    font-size: 0.98em;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.3em;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .intro-inner, .book-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .author-img {
+        margin-bottom: 2vw;
+        margin-right: 0;
+    }
+}
+@media (max-width: 700px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 0.3em 0;
+        align-items: flex-start;
+    }
+    .intro-inner,
+    .book-list {
+        gap: 0;
+        padding: 0 1vw;
+    }
+    .carousel blockquote {
+        min-width: 220px;
+        font-size: 1em;
+    }
+}
+@media (max-width: 500px) {
+    .brand-name {
+        font-size: 1.4em;
+    }
+    .subtitle {
+        font-size: 0.88em;
+    }
+    .hero-content {
+        padding: 1vw 2vw;
+    }
+    .intro-inner {
+        padding: 0 0.2vw;
+    }
+    .book img {
+        max-width: 120px;
+    }
+}
+
+/* Because "soft" isn't allowed here */
+::-webkit-scrollbar {
+    width: 10px;
+    background: var(--dark-whispers);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--burnt-echo3);
+    border-radius: 8px;
+    border: 2px solid var(--blood-oath);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--blood-oath);
+}
+/* End of the line */

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Make It Official | Cassandra Crossno</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="brand-name">Cassandra Crossno</span>
+      <span class="subtitle">The Crucible</span>
+    </div>
+    <nav>
+      <!-- ...same nav as the rest, snipped for brevity... -->
+    </nav>
+  </header>
+  <main>
+    <section class="checkout-hero">
+      <h1>Make It Official</h1>
+      <p>
+        Ready to seal the deal? Fill this out and claim your Survival Shit. Don’t worry, we won’t sell your info… unless the feds show up with a warrant.
+      </p>
+    </section>
+    <section class="checkout-form">
+      <form>
+        <div class="form-row">
+          <label for="name">Full Name:</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email:</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="form-row">
+          <label for="address">Shipping Address:</label>
+          <input id="address" name="address" type="text" autocomplete="shipping street-address" required>
+        </div>
+        <div class="form-row">
+          <label for="product">Product:</label>
+          <select id="product" name="product">
+            <option>HOLY SH*T, THEY’RE GONE</option>
+            <option>HOLY SH*T, I'M STILL HERE</option>
+            <option>Grief Brain: Still Fucked Up Mug</option>
+            <option>Fuck Your Platitudes Tee</option>
+            <option>Unbreakable Keychain</option>
+            <option>Grief Warrior Patch</option>
+            <option>Not Dead Yet Hoodie</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="payment">Card Number:</label>
+          <input id="payment" name="payment" type="text" pattern="[0-9]{16}" maxlength="16" required>
+        </div>
+        <div class="form-row">
+          <button type="submit" class="cta-btn">Complete Purchase (And Join the Broken Badasses)</button>
+        </div>
+        <p class="checkout-note">
+          By purchasing, you agree not to blame us if your existential crisis intensifies. (Also, see <a href="policies.html">Legal-ish Shit</a>.)
+        </p>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <nav>
+        <ul>
+          <li><a href="policies.html">legal-ish shit</a></li>
+          <li><a href="contact.html">holler at me</a></li>
+        </ul>
+      </nav>
+      <div class="copyright">
+        &copy; 2025 Cassandra Crossno. All rage reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
